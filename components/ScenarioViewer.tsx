@@ -54,15 +54,16 @@ export default function ScenarioViewer({ scenario }: { scenario: Scenario }) {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card p-8 rounded-xl border-l-4 border-l-primary"
             >
-                <h2 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                    <AlertCircle className="w-5 h-5" />
-                    สถานการณ์
-                </h2>
-                <p className="text-lg text-slate-300 leading-relaxed font-sarabun">
-                    {scenario.situation}
-                </p>
+                <div className="glass-card p-8 rounded-xl border-l-4 border-l-primary">
+                    <h2 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                        <AlertCircle className="w-5 h-5" />
+                        สถานการณ์
+                    </h2>
+                    <p className="text-lg text-slate-300 leading-relaxed font-sarabun">
+                        {scenario.situation}
+                    </p>
+                </div>
             </motion.div>
 
             {/* Choices Grid */}
@@ -146,26 +147,27 @@ export default function ScenarioViewer({ scenario }: { scenario: Scenario }) {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden"
                     >
-                        <div className={clsx(
-                            "p-6 rounded-xl border mt-6",
-                            selectedChoice.isCorrect ? "bg-emerald-900/10 border-emerald-500/30" : "bg-red-900/10 border-red-500/30"
-                        )}>
-                            <h3 className={clsx(
-                                "text-xl font-bold mb-2 flex items-center gap-2",
-                                selectedChoice.isCorrect ? "text-emerald-400" : "text-red-400"
+                        <div className="overflow-hidden">
+                            <div className={clsx(
+                                "p-6 rounded-xl border mt-6",
+                                selectedChoice.isCorrect ? "bg-emerald-900/10 border-emerald-500/30" : "bg-red-900/10 border-red-500/30"
                             )}>
-                                {selectedChoice.isCorrect ? "ดำเนินการถูกต้อง" : "ควรพิจารณาใหม่"}
-                            </h3>
-                            <p className="text-white text-lg mb-4">
-                                {selectedChoice.outcome}
-                            </p>
-                            <div className="bg-black/20 p-4 rounded-lg">
-                                <p className="text-slate-300 text-sm font-mono">
-                                    <span className="text-primary">NOTE: </span>
-                                    {selectedChoice.feedback}
+                                <h3 className={clsx(
+                                    "text-xl font-bold mb-2 flex items-center gap-2",
+                                    selectedChoice.isCorrect ? "text-emerald-400" : "text-red-400"
+                                )}>
+                                    {selectedChoice.isCorrect ? "ดำเนินการถูกต้อง" : "ควรพิจารณาใหม่"}
+                                </h3>
+                                <p className="text-white text-lg mb-4">
+                                    {selectedChoice.outcome}
                                 </p>
+                                <div className="bg-black/20 p-4 rounded-lg">
+                                    <p className="text-slate-300 text-sm font-mono">
+                                        <span className="text-primary">NOTE: </span>
+                                        {selectedChoice.feedback}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
