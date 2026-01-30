@@ -1,0 +1,99 @@
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import { BookOpen, ShieldAlert, Gavel, ChevronRight } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+
+      {/* Hero Section */}
+      <main className="flex-1 flex flex-col">
+        <section className="relative overflow-hidden bg-slate-900 py-24 sm:py-32">
+          {/* Background Grid Config */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-900 z-10" />
+          </div>
+
+          <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
+            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full py-1 px-3 mb-8">
+              <span className="flex w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-sm text-primary font-medium">เข้าถึงข้อมูลกฎหมายล่าสุด 2026</span>
+            </div>
+
+            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6 font-sarabun text-glow">
+              ระบบจำลองสถานการณ์<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">
+                กฎหมายและวินัยทหาร
+              </span>
+            </h1>
+
+            <p className="mt-4 text-lg leading-8 text-slate-400 max-w-2xl mx-auto font-light">
+              ศึกษา พระราชบัญญัติว่าด้วยวินัยทหาร ๒๕๖๘ และกฎหมายอื่นๆ ผ่านระบบฐานข้อมูลที่ทันสมัย
+              พร้อมบททดสอบจำลองสถานการณ์เสมือนจริงสำหรับบุคลากร
+            </p>
+
+            <div className="mt-10 flex items-center gap-x-6">
+              <Link
+                href="/roleplay"
+                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-primary px-8 font-medium text-slate-900 transition-all duration-300 hover:bg-white hover:text-slate-900 hover:scale-105 shadow-[0_0_20px_-5px_rgba(245,158,11,0.5)]"
+              >
+                <span className="mr-2">เริ่มการจำลองสถานการณ์</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]" />
+              </Link>
+              <Link href="/laws" className="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors">
+                ดูฐานข้อมูลกฎหมาย <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Cards */}
+        <section className="bg-slate-950 py-24 sm:py-32 relative">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+
+              <div className="glass-card p-8 rounded-2xl hover:bg-slate-800/50 transition-all duration-300 group">
+                <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center border border-blue-500/20 mb-6 group-hover:scale-110 transition-transform">
+                  <BookOpen className="w-6 h-6 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">คลังกฎหมายดิจิทัล</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  รวบรวม พรบ.วินัยทหาร ๒๕๖๘, กฎหมายเกิดใหม่ และรัฐธรรมนูญฉบับล่าสุด ไว้ในที่เดียว พร้อมระบบค้นหา
+                </p>
+              </div>
+
+              <div className="glass-card p-8 rounded-2xl hover:bg-slate-800/50 transition-all duration-300 group">
+                <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center border border-amber-500/20 mb-6 group-hover:scale-110 transition-transform">
+                  <ShieldAlert className="w-6 h-6 text-amber-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">จำลองสถานการณ์ (Roleplay)</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  ฝึกฝนการตัดสินใจผ่านเหตุการณ์จำลอง ที่อ้างอิงจากระเบียบและการปฏิบัติจริง เพื่อเตรียมความพร้อม
+                </p>
+              </div>
+
+              <div className="glass-card p-8 rounded-2xl hover:bg-slate-800/50 transition-all duration-300 group">
+                <div className="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center border border-emerald-500/20 mb-6 group-hover:scale-110 transition-transform">
+                  <Gavel className="w-6 h-6 text-emerald-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">การวินิจฉัยและบทลงโทษ</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  เรียนรู้หลักการพิจารณาโทษ และขอบเขตอำนาจหน้าที่ตามกฎหมายใหม่ เพื่อความถูกต้องและยุติธรรม
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-slate-900 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
+        <p>© 2026 Military Justice System. All rights reserved.</p>
+        <p className="mt-2 text-xs opacity-50">เอกสารนี้ใช้สำหรับการศึกษาและบทบาทสมมติเท่านั้น</p>
+      </footer>
+    </div>
+  );
+}
