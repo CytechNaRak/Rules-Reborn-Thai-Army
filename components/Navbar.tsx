@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Shield, Book, Swords, Home, Users } from "lucide-react";
+import { Shield, Book, Swords, Home, Users, Menu, X } from "lucide-react";
 import { clsx } from "clsx";
 
 export default function Navbar() {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
         { name: "หน้าแรก", href: "/", icon: Home },
@@ -20,7 +22,7 @@ export default function Navbar() {
         <nav className="border-b border-secondary bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center gap-3">
+                    <Link href="/" className="flex items-center gap-3">
                         <div className="relative w-10 h-10">
                             <Image
                                 src="/images/emblem.png"
@@ -29,11 +31,12 @@ export default function Navbar() {
                                 className="object-contain"
                             />
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-white">
+                        <span className="text-xl font-bold tracking-tight text-white line-clamp-1">
                             [✨] เกิดใหม่ในรั้วทหารไทย
                         </span>
-                    </div>
+                    </Link>
 
+                    {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             {navItems.map((item) => {
@@ -57,8 +60,51 @@ export default function Navbar() {
                             })}
                         </div>
                     </div>
+
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden flex items-center">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        >
+                            <span className="sr-only">Open main menu</span>
+                            {isOpen ? (
+                                <X className="block w-6 h-6" aria-hidden="true" />
+                            ) : (
+                                <Menu className="block w-6 h-6" aria-hidden="true" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="md:hidden bg-slate-900 border-b border-slate-800 absolute w-full left-0 top-16 shadow-xl">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        {navItems.map((item) => {
+                            const Icon = item.icon;
+                            const isActive = pathname === item.href;
+                            return (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className={clsx(
+                                        "flex items-center gap-3 px-3 py-3 rounded-md text-base font-medium transition-colors duration-200",
+                                        isActive
+                                            ? "bg-primary text-slate-900"
+                                            : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                                    )}
+                                >
+                                    <Icon className="w-5 h-5" />
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }

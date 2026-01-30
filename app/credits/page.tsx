@@ -14,7 +14,7 @@ export default function Credits() {
                         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
                             <Users className="w-8 h-8 text-primary" />
                         </div>
-                        <h1 className="text-4xl font-bold text-white font-sarabun text-glow mb-4">
+                        <h1 className="text-2xl md:text-4xl font-bold text-white font-sarabun text-glow mb-4">
                             คณะผู้จัดทำและร่างกฎหมาย
                         </h1>
                         <p className="text-slate-400">
@@ -23,8 +23,8 @@ export default function Credits() {
                     </div>
 
                     {/* Official Signatures Image */}
-                    <div className="glass-card p-8 rounded-2xl mb-12 flex justify-center items-center bg-white/5">
-                        <div className="relative w-full h-auto min-h-[400px]">
+                    <div className="glass-card p-4 md:p-8 rounded-2xl mb-8 md:mb-12 flex justify-center items-center bg-white/5">
+                        <div className="relative w-full h-auto min-h-[200px] md:min-h-[400px]">
                             <Image
                                 src="/images/lawmakers.png"
                                 alt="Lawmakers Signatures"
