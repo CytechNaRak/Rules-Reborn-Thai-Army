@@ -10,15 +10,15 @@ const sarabun = Sarabun({
 });
 
 const prompt = Prompt({
-    weight: ['300', '400', '600'],
-    subsets: ['thai', 'latin'],
-    variable: '--font-prompt',
-    display: 'swap',
+  weight: ['300', '400', '600'],
+  subsets: ['thai', 'latin'],
+  variable: '--font-prompt',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Military Law Roleplay",
-  description: "Learn and practice military law through interactive roleplay scenarios.",
+  title: "Reborn Rules RTA",
+  description: "ระบบฐานข้อมูลกฎหมายและวินัยทหารไทยสำหรับแมพ [✨] เกิดใหม่ในรั้วทหารไทย",
 };
 
 export default function RootLayout({

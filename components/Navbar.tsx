@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Shield, Book, Swords, Home } from "lucide-react";
+import { Shield, Book, Swords, Home, Users } from "lucide-react";
 import { clsx } from "clsx";
 
 export default function Navbar() {
@@ -11,7 +12,8 @@ export default function Navbar() {
     const navItems = [
         { name: "หน้าแรก", href: "/", icon: Home },
         { name: "กฎหมายทหาร", href: "/laws", icon: Book },
-        { name: "จำลองสถานการณ์", href: "/roleplay", icon: Swords },
+        { name: "แบบทดสอบ", href: "/roleplay", icon: Swords },
+        { name: "คณะผู้จัดทำ", href: "/credits", icon: Users },
     ];
 
     return (
@@ -19,11 +21,16 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-3">
-                        <div className="bg-primary/20 p-2 rounded-lg border border-primary/50">
-                            <Shield className="w-6 h-6 text-primary" />
+                        <div className="relative w-10 h-10">
+                            <Image
+                                src="/images/emblem.png"
+                                alt="Logo"
+                                fill
+                                className="object-contain"
+                            />
                         </div>
                         <span className="text-xl font-bold tracking-tight text-white">
-                            Military Justice System
+                            [✨] เกิดใหม่ในรั้วทหารไทย
                         </span>
                     </div>
 

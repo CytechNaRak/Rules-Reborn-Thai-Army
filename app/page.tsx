@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { BookOpen, ShieldAlert, Gavel, ChevronRight } from "lucide-react";
 
@@ -17,34 +18,44 @@ export default function Home() {
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
+            {/* Emblem Image */}
+            <div className="mb-8 relative w-48 h-48 animate-in fade-in zoom-in duration-1000">
+              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
+              <Image
+                src="/images/emblem.png"
+                alt="Constitution Court of Thailand Emblem"
+                fill
+                className="object-contain drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]"
+              />
+            </div>
             <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full py-1 px-3 mb-8">
               <span className="flex w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm text-primary font-medium">เข้าถึงข้อมูลกฎหมายล่าสุด 2026</span>
             </div>
 
             <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6 font-sarabun text-glow">
-              ระบบจำลองสถานการณ์<br />
+              [✨] เกิดใหม่ในรั้วทหารไทย<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">
-                กฎหมายและวินัยทหาร
+               กฎหมายและวินัยทหาร
               </span>
             </h1>
 
             <p className="mt-4 text-lg leading-8 text-slate-400 max-w-2xl mx-auto font-light">
-              ศึกษา พระราชบัญญัติว่าด้วยวินัยทหาร ๒๕๖๘ และกฎหมายอื่นๆ ผ่านระบบฐานข้อมูลที่ทันสมัย
-              พร้อมบททดสอบจำลองสถานการณ์เสมือนจริงสำหรับบุคลากร
+              คลังกฎหมายและวินัยทหาร ของ [✨] เกิดใหม่ในรั้วทหารไทย <br />
+              พร้อมระบบ ทดสอบความเข้าใจกฏหมายและวินัยทหารแบบคร่าวๆ <br />
             </p>
 
             <div className="mt-10 flex items-center gap-x-6">
               <Link
-                href="/roleplay"
+                href="/laws"
                 className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-primary px-8 font-medium text-slate-900 transition-all duration-300 hover:bg-white hover:text-slate-900 hover:scale-105 shadow-[0_0_20px_-5px_rgba(245,158,11,0.5)]"
               >
-                <span className="mr-2">เริ่มการจำลองสถานการณ์</span>
+                <span className="mr-2">คลังกฎหมาย</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]" />
               </Link>
-              <Link href="/laws" className="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors">
-                ดูฐานข้อมูลกฎหมาย <span aria-hidden="true">→</span>
+              <Link href="/roleplay" className="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors">
+                เริ่มทำแบบทดสอบ <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -61,7 +72,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">คลังกฎหมายดิจิทัล</h3>
                 <p className="text-slate-400 leading-relaxed">
-                  รวบรวม พรบ.วินัยทหาร ๒๕๖๘, กฎหมายเกิดใหม่ และรัฐธรรมนูญฉบับล่าสุด ไว้ในที่เดียว พร้อมระบบค้นหา
+                  รวบรวมกฏหมายทั้งหมดของ [✨] เกิดใหม่ในรั้วทหารไทย ไว้ในที่เดียว 
                 </p>
               </div>
 
@@ -69,9 +80,9 @@ export default function Home() {
                 <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center border border-amber-500/20 mb-6 group-hover:scale-110 transition-transform">
                   <ShieldAlert className="w-6 h-6 text-amber-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">จำลองสถานการณ์ (Roleplay)</h3>
+                <h3 className="text-xl font-bold text-white mb-3">แบบทดสอบ</h3>
                 <p className="text-slate-400 leading-relaxed">
-                  ฝึกฝนการตัดสินใจผ่านเหตุการณ์จำลอง ที่อ้างอิงจากระเบียบและการปฏิบัติจริง เพื่อเตรียมความพร้อม
+                  มีแบบทดสอบ เพื่อทดสอบความเข้าใจคร่าวๆ
                 </p>
               </div>
 
@@ -81,7 +92,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">การวินิจฉัยและบทลงโทษ</h3>
                 <p className="text-slate-400 leading-relaxed">
-                  เรียนรู้หลักการพิจารณาโทษ และขอบเขตอำนาจหน้าที่ตามกฎหมายใหม่ เพื่อความถูกต้องและยุติธรรม
+                  การลงโทษและวินิจฉัยตามกฎหมายปฏิบัติตามกฏหมายของ [✨] เกิดใหม่ในรั้วทหารไทย เท่านั้น ไม่นอกเหนือจากนี้
                 </p>
               </div>
 
@@ -91,8 +102,8 @@ export default function Home() {
       </main>
 
       <footer className="bg-slate-900 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
-        <p>© 2026 Military Justice System. All rights reserved.</p>
-        <p className="mt-2 text-xs opacity-50">เอกสารนี้ใช้สำหรับการศึกษาและบทบาทสมมติเท่านั้น</p>
+        <p>© 2026 Reborn Rules RTA. All rights reserved.</p>
+        <p className="mt-2 text-xs opacity-50">กฏหมายชุดนี้ใช้สำหรับ กฏหมายของ [✨] เกิดใหม่ในรั้วทหารไทย เท่านั้น</p>
       </footer>
     </div>
   );
