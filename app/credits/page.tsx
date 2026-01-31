@@ -77,7 +77,7 @@ export default function Credits() {
                                     <CheckCircle className="w-5 h-5 text-emerald-400" />
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-white font-sarabun">จอมพล SoEarth007</h3>
+                                    <h3 className="text-lg font-bold text-white font-sarabun">พลเอก SoEarth007</h3>
                                     <p className="text-primary text-sm mb-2">ผู้บัญชาการทหารบก</p>
                                     <div className="flex flex-wrap gap-2">
                                         <span className="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300">ผู้ตรวจทาน</span>
