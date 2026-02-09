@@ -102,7 +102,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-slate-900 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
-        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.1</p>
+        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
         <p className="mt-2 text-xs opacity-50">กฏหมายชุดนี้ใช้สำหรับ กฏหมายของ [✨] เกิดใหม่ในรั้วทหารไทย เท่านั้น</p>
       </footer>
     </div>
