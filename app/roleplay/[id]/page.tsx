@@ -3,6 +3,12 @@ import { scenarios } from "@/data/scenarios";
 import { notFound } from "next/navigation";
 import ScenarioViewer from "@/components/ScenarioViewer";
 
+export async function generateStaticParams() {
+    return scenarios.map((scenario) => ({
+        id: scenario.id,
+    }));
+}
+
 interface PageProps {
     params: Promise<{ id: string }>;
 }

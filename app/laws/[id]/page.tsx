@@ -4,6 +4,12 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
 import Link from "next/link";
 
+export async function generateStaticParams() {
+    return laws.map((law) => ({
+        id: law.id,
+    }));
+}
+
 interface PageProps {
     params: Promise<{ id: string }>;
 }
