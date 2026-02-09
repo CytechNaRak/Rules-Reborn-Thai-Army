@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[97367,["/Rules-Reborn-Thai-Army/_next/static/chunks/ff1a16fafef87110.js","/Rules-Reborn-Thai-Army/_next/static/chunks/d2be314c3ece3fbe.js"],"ViewportBoundary"]
+3:I[97367,["/Rules-Reborn-Thai-Army/_next/static/chunks/ff1a16fafef87110.js","/Rules-Reborn-Thai-Army/_next/static/chunks/d2be314c3ece3fbe.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[27201,["/Rules-Reborn-Thai-Army/_next/static/chunks/ff1a16fafef87110.js","/Rules-Reborn-Thai-Army/_next/static/chunks/d2be314c3ece3fbe.js"],"IconMark"]
+0:{"buildId":"jIricFb05Svp4kua_bYHh","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Reborn Rules RTA"}],["$","meta","1",{"name":"description","content":"ระบบฐานข้อมูลกฎหมายและวินัยทหารไทยสำหรับแมพ [✨] เกิดใหม่ในรั้วทหารไทย"}],["$","link","2",{"rel":"icon","href":"/Rules-Reborn-Thai-Army/icon.png?icon.a7e7321a.png","sizes":"1024x1024","type":"image/png"}],["$","$L5","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
