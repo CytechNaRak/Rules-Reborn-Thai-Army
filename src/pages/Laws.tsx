@@ -1,9 +1,9 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { laws } from "@/data/laws";
 import { Book, FileText, ArrowRight } from "lucide-react";
 
-export default function LawsPage() {
+export default function Laws() {
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar />
@@ -65,10 +65,10 @@ export default function LawsPage() {
     );
 }
 
-function LawCard({ law }: { law: import("@/data/laws").Law }) {
+function LawCard({ law }: { law: any }) {
     return (
         <Link
-            href={`/laws/${law.id}`}
+            to={`/laws/${law.id}`}
             className="block group"
         >
             <div className="glass-card hover:bg-slate-800/60 p-6 rounded-xl transition-all duration-300 border-l-4 border-l-transparent hover:border-l-primary relative overflow-hidden">

@@ -1,14 +1,11 @@
-"use client";
-
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Shield, Book, Swords, Home, Users, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Home, Book, Swords, Users, Menu, X } from "lucide-react";
 import { clsx } from "clsx";
 
 export default function Navbar() {
-    const pathname = usePathname();
+    const location = useLocation();
+    const pathname = location.pathname;
     const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
@@ -22,13 +19,12 @@ export default function Navbar() {
         <nav className="border-b border-secondary bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <Link href="/" className="flex items-center gap-3">
+                    <Link to="/" className="flex items-center gap-3">
                         <div className="relative w-10 h-10">
-                            <Image
+                            <img
                                 src="/images/emblem.png"
                                 alt="Logo"
-                                fill
-                                className="object-contain"
+                                className="object-contain w-full h-full"
                             />
                         </div>
                         <span className="text-xl font-bold tracking-tight text-white line-clamp-1">
@@ -45,7 +41,7 @@ export default function Navbar() {
                                 return (
                                     <Link
                                         key={item.name}
-                                        href={item.href}
+                                        to={item.href}
                                         className={clsx(
                                             "flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                                             isActive
@@ -88,7 +84,7 @@ export default function Navbar() {
                             return (
                                 <Link
                                     key={item.name}
-                                    href={item.href}
+                                    to={item.href}
                                     onClick={() => setIsOpen(false)}
                                     className={clsx(
                                         "flex items-center gap-3 px-3 py-3 rounded-md text-base font-medium transition-colors duration-200",

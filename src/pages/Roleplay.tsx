@@ -1,10 +1,10 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { scenarios } from "@/data/scenarios";
-import { Swords, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Swords } from "lucide-react";
 import { clsx } from "clsx";
 
-export default function RoleplayPage() {
+export default function Roleplay() {
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar />
@@ -25,7 +25,7 @@ export default function RoleplayPage() {
                         {scenarios.map((scenario) => (
                             <Link
                                 key={scenario.id}
-                                href={`/roleplay/${scenario.id}`}
+                                to={`/roleplay/${scenario.id}`}
                                 className="group block"
                             >
                                 <div className="glass-card h-full p-6 rounded-xl hover:bg-slate-800/60 transition-all duration-300 hover:scale-[1.02] border border-slate-700/50 hover:border-primary/50 relative overflow-hidden">

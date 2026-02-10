@@ -3,30 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "clsx": "^2.1.0",
     "framer-motion": "^10.16.0",
     "lucide-react": "^0.300.0",
-    "next": "^16.1.6",
     "pdf-parse": "^2.4.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.15.7",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.1.4",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "gh-pages": "^6.3.0",
+    "react-router-dom": "^7.13.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "^7.3.1"
   }
 }

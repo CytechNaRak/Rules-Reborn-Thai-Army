@@ -1,27 +1,22 @@
+import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { laws } from "@/data/laws";
-import { notFound } from "next/navigation";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
-import Link from "next/link";
 
-export async function generateStaticParams() {
-    return laws.map((law) => ({
-        id: law.id,
-    }));
-}
-
-interface PageProps {
-    params: Promise<{ id: string }>;
-}
-
-export default async function LawDetail({ params }: PageProps) {
-    // Await the params object (Next.js 15+)
-    const { id } = await params;
-
+export default function LawDetail() {
+    const { id } = useParams();
     const law = laws.find((l) => l.id === id);
 
     if (!law) {
-        notFound();
+        return (
+            <div className="min-h-screen flex flex-col bg-slate-950">
+                <Navbar />
+                <div className="flex-1 flex flex-col items-center justify-center text-white">
+                    <h1 className="text-2xl font-bold mb-4">ไม่พบข้อมูลกฎหมาย</h1>
+                    <Link to="/laws" className="text-primary hover:underline">กลับไปยังคลังกฎหมาย</Link>
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -33,7 +28,7 @@ export default async function LawDetail({ params }: PageProps) {
 
                     <div className="mb-8">
                         <Link
-                            href="/laws"
+                            to="/laws"
                             className="inline-flex items-center text-slate-400 hover:text-white transition-colors mb-6 text-sm"
                         >
                             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -59,7 +54,7 @@ export default async function LawDetail({ params }: PageProps) {
 
                     <div className="space-y-8">
                         {law.sections.length > 0 ? (
-                            law.sections.map((section) => (
+                            law.sections.map((section: any) => (
                                 <article
                                     key={section.id}
                                     className="glass-card p-6 sm:p-8 rounded-xl"
@@ -68,7 +63,7 @@ export default async function LawDetail({ params }: PageProps) {
                                         {section.title}
                                     </h3>
                                     <div className="prose prose-invert prose-slate max-w-none leading-relaxed font-sarabun">
-                                        {section.content.split('\n').map((line, i) => (
+                                        {section.content.split('\n').map((line: string, i: number) => (
                                             <p key={i} className="mb-4">{line}</p>
                                         ))}
                                     </div>

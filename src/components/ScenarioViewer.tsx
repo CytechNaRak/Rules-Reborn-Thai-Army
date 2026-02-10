@@ -1,10 +1,8 @@
-"use client";
-
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Scenario, Choice } from "@/data/scenarios";
 import { AlertCircle, CheckCircle, XCircle, ArrowLeft, RefreshCw } from "lucide-react";
 import { clsx } from "clsx";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ScenarioViewer({ scenario }: { scenario: Scenario }) {
@@ -29,7 +27,7 @@ export default function ScenarioViewer({ scenario }: { scenario: Scenario }) {
     return (
         <div className="space-y-8">
             {/* Navigation */}
-            <Link href="/roleplay" className="inline-flex items-center text-slate-400 hover:text-white mb-4">
+            <Link to="/roleplay" className="inline-flex items-center text-slate-400 hover:text-white mb-4">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 กลับไปยังหน้ารวม
             </Link>
