@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คลังกฎหมาย - [✨] เกิดใหม่ในรั้วทหารไทย</title>
+    <link rel="icon" type="image/png" href="images/emblem.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-header {
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .laws-grid {
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .law-card {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .law-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .law-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .law-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .law-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/emblem.png" alt="Logo">
+                <span>[✨] เกิดใหม่ในรั้วทหารไทย</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i data-lucide="home"></i> หน้าแรก</a>
+                <a href="laws.html" class="active"><i data-lucide="book"></i> คลังกฎหมาย</a>
+                <a href="roleplay.html"><i data-lucide="swords"></i> แบบทดสอบ</a>
+                <a href="credits.html"><i data-lucide="users"></i> ผู้จัดทำ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="badge">
+            <i data-lucide="book" style="width:1rem;"></i>
+            <span>ฐานข้อมูลกฎหมาย</span>
+        </div>
+        <h1 style="font-size: 2.5rem;">คลังกฎหมายและวินัยทหาร</h1>
+        <p class="hero-desc">รวบรวมข้อระเบียบและแนวทางปฏิบัติทางกฎหมายที่สำคัญสำหรับกำลังพล</p>
+    </div>
+
+    <div id="laws-container" class="laws-grid">
+        <!-- Laws will be injected here -->
+    </div>
+
+    <footer>
+        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        const container = document.getElementById('laws-container');
+
+        lawsData.forEach(law => {
+            const card = document.createElement('a');
+            card.href = `law-detail.html?id=${law.id}`;
+            card.className = 'glass-card law-card';
+
+            card.innerHTML = `
+                <div class="category-tag">${law.category}</div>
+                <h2>${law.title}</h2>
+                <p>${law.description}</p>
+                <div class="law-footer">
+                    อ่านเพิ่มเติม <i data-lucide="arrow-right" style="width:1rem;"></i>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

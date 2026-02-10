@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คณะผู้จัดทำ - [✨] เกิดใหม่ในรั้วทหารไทย</title>
+    <link rel="icon" type="image/png" href="images/emblem.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-header {
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+        }
+
+        .credits-grid {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .credit-card {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .credit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .credit-card p {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .signature-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .signature-box {
+            display: inline-block;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .signature-box img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .signature-box img:hover {
+            opacity: 1;
+        }
+
+        .footer-heart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/emblem.png" alt="Logo">
+                <span>[✨] เกิดใหม่ในรั้วทหารไทย</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i data-lucide="home"></i> หน้าแรก</a>
+                <a href="laws.html"><i data-lucide="book"></i> คลังกฎหมาย</a>
+                <a href="roleplay.html"><i data-lucide="swords"></i> แบบทดสอบ</a>
+                <a href="credits.html" class="active"><i data-lucide="users"></i> ผู้จัดทำ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="badge">
+            <i data-lucide="users" style="width:1rem;"></i>
+            <span>คณะผู้จัดทำ</span>
+        </div>
+        <h1>ขอขอบคุณผู้มีส่วนร่วม</h1>
+        <p class="hero-desc">ทุกท่านที่มีส่วนช่วยให้ระบบฐานข้อมูลกฎหมายและวินัยทหารนี้เกิดขึ้นมาได้</p>
+    </div>
+
+    <div class="credits-grid">
+        <div class="glass-card credit-card">
+            <h3>Reborn Team</h3>
+            <p>เจ้าของโปรเจกต์และผู้ก่อตั้ง</p>
+        </div>
+        <div class="glass-card credit-card">
+            <h3>NaRak Team</h3>
+            <p>ฝ่ายเทคโนโลยีและระบบฐานข้อมูล</p>
+        </div>
+        <div class="glass-card credit-card">
+            <h3>กองบัญชาการทหารสูงสุด</h3>
+            <p>ฝ่ายกฎหมายและวินัยทหาร</p>
+        </div>
+    </div>
+
+    <div class="signature-section">
+        <div class="glass-card signature-box">
+            <img src="images/lawmakers.png" alt="Lawmakers Signatures">
+        </div>
+        <div class="footer-heart">
+            จัดทำด้วย <i data-lucide="heart" style="width:1rem; fill:#ef4444; color:#ef4444;"></i> โดย ทีมงาน Reborn
+            Rules RTA
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Version
+            1.2.0 • Stable Release</div>
+    </div>
+
+    <footer>
+        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

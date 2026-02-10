@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดกฎหมาย - [✨] เกิดใหม่ในรั้วทหารไทย</title>
+    <link rel="icon" type="image/png" href="images/emblem.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .detail-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .detail-header {
+            margin-bottom: 3rem;
+        }
+
+        .detail-header h1 {
+            font-size: 2.25rem;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .section-item {
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .section-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .section-content {
+            line-height: 1.8;
+            color: var(--text);
+            white-space: pre-wrap;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/emblem.png" alt="Logo">
+                <span>[✨] เกิดใหม่ในรั้วทหารไทย</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i data-lucide="home"></i> หน้าแรก</a>
+                <a href="laws.html" class="active"><i data-lucide="book"></i> คลังกฎหมาย</a>
+                <a href="roleplay.html"><i data-lucide="swords"></i> แบบทดสอบ</a>
+                <a href="credits.html"><i data-lucide="users"></i> ผู้จัดทำ</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="detail-container">
+        <a href="laws.html" class="back-link"><i data-lucide="arrow-left" style="width:1rem;"></i> กลับสู่คลังกฎหมาย</a>
+
+        <div id="law-header" class="detail-header">
+            <!-- Header content injected here -->
+        </div>
+
+        <div id="law-sections">
+            <!-- Sections injected here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const lawId = urlParams.get('id');
+        const law = lawsData.find(l => l.id === lawId);
+
+        if (law) {
+            document.title = `${law.title} - [✨] เกิดใหม่ในรั้วทหารไทย`;
+
+            const header = document.getElementById('law-header');
+            header.innerHTML = `
+                <div class="category-tag">${law.category}</div>
+                <h1>${law.title}</h1>
+                <p class="hero-desc" style="text-align:left; margin-left:0; max-width:none;">${law.description}</p>
+            `;
+
+            const sectionsContainer = document.getElementById('law-sections');
+            law.sections.forEach(section => {
+                const item = document.createElement('div');
+                item.className = 'glass-card section-item';
+                item.innerHTML = `
+                    <h3>${section.title}</h3>
+                    <div class="section-content">${section.content}</div>
+                `;
+                sectionsContainer.appendChild(item);
+            });
+        } else {
+            document.body.innerHTML = '<h1 style="text-align:center; padding: 10rem;">ไม่พบข้อมูลกฎหมาย</h1>';
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

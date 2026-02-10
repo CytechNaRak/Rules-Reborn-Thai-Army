@@ -2,16 +2,110 @@
 <html lang="th">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/images/emblem.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reborn Rules RTA</title>
-  <meta name="description" content="ระบบฐานข้อมูลกฎหมายและวินัยทหารไทยสำหรับแมพ [✨] เกิดใหม่ในรั้วทหารไทย" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[✨] เกิดใหม่ในรั้วทหารไทย - กฎหมายและวินัยทหาร</title>
+  <meta name="description" content="ระบบฐานข้อมูลกฎหมายและวินัยทหารไทยสำหรับแมพ [✨] เกิดใหม่ในรั้วทหารไทย">
+  <link rel="icon" type="image/png" href="images/emblem.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/emblem.png" alt="Logo">
+        <span>[✨] เกิดใหม่ในรั้วทหารไทย</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active"><i data-lucide="home"></i> หน้าแรก</a>
+        <a href="laws.html"><i data-lucide="book"></i> คลังกฎหมาย</a>
+        <a href="roleplay.html"><i data-lucide="swords"></i> แบบทดสอบ</a>
+        <a href="credits.html"><i data-lucide="users"></i> ผู้จัดทำ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="emblem-container">
+        <div class="emblem-blur"></div>
+        <img src="images/emblem.png" alt="Emblem">
+      </div>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>เข้าถึงข้อมูลกฎหมายล่าสุด 2026</span>
+      </div>
+
+      <h1>
+        [✨] เกิดใหม่ในรั้วทหารไทย<br>
+        <span class="text-gradient">กฎหมายและวินัยทหาร</span>
+      </h1>
+
+      <p class="hero-desc">
+        คลังกฎหมายและวินัยทหาร ของ [✨] เกิดใหม่ในรั้วทหารไทย
+        พร้อมระบบ ทดสอบความเข้าใจกฏหมายและวินัยทหารแบบคร่าวๆ
+      </p>
+
+      <div class="cta-group">
+        <a href="laws.html" class="btn-primary">คลังกฎหมาย <i data-lucide="chevron-right"
+            style="display:inline; vertical-align:middle; width:1rem;"></i></a>
+        <a href="roleplay.html" class="btn-secondary">เริ่มทำแบบทดสอบ <i data-lucide="arrow-right"
+            style="display:inline; vertical-align:middle; width:1rem;"></i></a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features-container">
+        <div class="glass-card feature-item">
+          <div class="feature-icon" style="background: rgba(59, 130, 246, 0.1); color: #60a5fa;">
+            <i data-lucide="book-open"></i>
+          </div>
+          <h3>คลังกฎหมายดิจิทัล</h3>
+          <p>รวบรวมกฏหมายทั้งหมดของ [✨] เกิดใหม่ในรั้วทหารไทย ไว้ในที่เดียว เข้าถึงง่ายและรวดเร็ว</p>
+        </div>
+
+        <div class="glass-card feature-item">
+          <div class="feature-icon" style="background: rgba(245, 158, 11, 0.1); color: #fbbf24;">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <h3>แบบทดสอบ</h3>
+          <p>มีแบบทดสอบสถานการณ์จำลอง เพื่อทดสอบความเข้าใจในการบังคับใช้กฎหมายในบทบาทสมมติ</p>
+        </div>
+
+        <div class="glass-card feature-item">
+          <div class="feature-icon" style="background: rgba(16, 185, 129, 0.1); color: #34d399;">
+            <i data-lucide="gavel"></i>
+          </div>
+          <h3>การวินิจฉัยและบทลงโทษ</h3>
+          <p>การลงโทษและวินิจฉัยตามกฎหมายปฏิบัติตามกฏหมายของเซิร์ฟเวอร์เท่านั้น ไม่นอกเหนื่อจากนี้</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">กฏหมายชุดนี้ใช้สำหรับ กฏหมายของ [✨]
+      เกิดใหม่ในรั้วทหารไทย เท่านั้น</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 
 </html>

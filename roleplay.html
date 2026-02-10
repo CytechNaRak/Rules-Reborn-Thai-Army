@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบสถานการณ์ - [✨] เกิดใหม่ในรั้วทหารไทย</title>
+    <link rel="icon" type="image/png" href="images/emblem.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-header {
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .scenarios-grid {
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .scenario-card {
+            padding: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .diff-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .diff-base {
+            background: rgba(52, 211, 153, 0.1);
+            color: #34d399;
+        }
+
+        .diff-mid {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
+        }
+
+        .diff-high {
+            background: rgba(248, 113, 113, 0.1);
+            color: #f87171;
+        }
+
+        .scenario-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .scenario-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-link {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/emblem.png" alt="Logo">
+                <span>[✨] เกิดใหม่ในรั้วทหารไทย</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i data-lucide="home"></i> หน้าแรก</a>
+                <a href="laws.html"><i data-lucide="book"></i> คลังกฎหมาย</a>
+                <a href="roleplay.html" class="active"><i data-lucide="swords"></i> แบบทดสอบ</a>
+                <a href="credits.html"><i data-lucide="users"></i> ผู้จัดทำ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="badge">
+            <i data-lucide="swords" style="width:1rem;"></i>
+            <span>โหมดจำลองสถานการณ์</span>
+        </div>
+        <h1>แบบทดสอบสถานการณ์</h1>
+        <p class="hero-desc">ทดสอบความเข้าใจและการตัดสินใจภายใต้กฎเบื้องต้นและวินัยทหาร</p>
+    </div>
+
+    <div id="scenarios-container" class="scenarios-grid">
+        <!-- Scenarios will be injected here -->
+    </div>
+
+    <footer>
+        <p>© 2026 Reborn Rules RTA. All rights reserved. v1.2</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        const container = document.getElementById('scenarios-container');
+
+        scenariosData.forEach(scenario => {
+            const card = document.createElement('a');
+            card.href = `scenario-viewer.html?id=${scenario.id}`;
+            card.className = 'glass-card scenario-card';
+
+            let diffClass = 'diff-base';
+            if (scenario.difficulty === 'ปานกลาง') diffClass = 'diff-mid';
+            if (scenario.difficulty === 'ขั้นสูง') diffClass = 'diff-high';
+
+            card.innerHTML = `
+                <div class="diff-tag ${diffClass}">${scenario.difficulty}</div>
+                <h2>${scenario.title}</h2>
+                <p>${scenario.description}</p>
+                <div class="action-link">เข้าสู่สถานการณ์ <i data-lucide="arrow-right" style="width:1rem;"></i></div>
+            `;
+            container.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
