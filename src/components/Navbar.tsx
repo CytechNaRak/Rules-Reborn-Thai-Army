@@ -22,7 +22,7 @@ export default function Navbar() {
                     <Link to="/" className="flex items-center gap-3">
                         <div className="relative w-10 h-10">
                             <img
-                                src="/images/emblem.png"
+                                src="images/emblem.png"
                                 alt="Logo"
                                 className="object-contain w-full h-full"
                             />
