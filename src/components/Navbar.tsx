@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Book, Swords, Users, Menu, X } from "lucide-react";
 import { clsx } from "clsx";
-import emblem from "@/assets/images/emblem.png";
 
 export default function Navbar() {
     const location = useLocation();
@@ -23,7 +22,7 @@ export default function Navbar() {
                     <Link to="/" className="flex items-center gap-3">
                         <div className="relative w-10 h-10">
                             <img
-                                src={emblem}
+                                src={`${import.meta.env.BASE_URL}images/emblem.png`}
                                 alt="Logo"
                                 className="object-contain w-full h-full"
                             />

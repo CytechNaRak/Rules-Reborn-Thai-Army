@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { BookOpen, ShieldAlert, Gavel, ChevronRight } from "lucide-react";
-import emblem from "@/assets/images/emblem.png";
 
 export default function Home() {
     return (
@@ -22,7 +21,7 @@ export default function Home() {
                         <div className="mb-8 relative w-32 h-32 md:w-48 md:h-48 animate-in fade-in zoom-in duration-1000">
                             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
                             <img
-                                src={emblem}
+                                src={`${import.meta.env.BASE_URL}images/emblem.png`}
                                 alt="Constitution Court of Thailand Emblem"
                                 className="object-contain drop-shadow-[0_0_15px_rgba(234,179,8,0.3)] w-full h-full"
                             />
