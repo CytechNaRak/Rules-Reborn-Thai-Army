@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { Users, Heart } from "lucide-react";
+import lawmakers from "@/assets/images/lawmakers.png";
 
 export default function Credits() {
     const creators = [
@@ -36,7 +37,7 @@ export default function Credits() {
                     <div className="mt-24 text-center">
                         <div className="mb-8 inline-block glass-card p-4 rounded-xl">
                             <img
-                                src={`${import.meta.env.BASE_URL}images/lawmakers.png`}
+                                src={lawmakers}
                                 alt="Lawmakers Signatures"
                                 className="max-w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
