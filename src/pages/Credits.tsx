@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { Users, Heart } from "lucide-react";
+import lawmakers from "@/assets/images/lawmakers.png";
 
 export default function Credits() {
     const creators = [
@@ -34,6 +35,13 @@ export default function Credits() {
                     </div>
 
                     <div className="mt-24 text-center">
+                        <div className="mb-8 inline-block glass-card p-4 rounded-xl">
+                            <img
+                                src={lawmakers}
+                                alt="Lawmakers Signatures"
+                                className="max-w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
+                            />
+                        </div>
                         <p className="text-slate-500 flex items-center justify-center gap-2">
                             จัดทำด้วย <Heart className="w-4 h-4 text-red-500 fill-red-500" /> โดย ทีมงาน Reborn Rules RTA
                         </p>
